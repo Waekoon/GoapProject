@@ -23,6 +23,16 @@ public class WorldStates
         return states.ContainsKey(key);
     }
 
+    public int GetValue(string key)
+    {
+        if (states.ContainsKey(key))
+        {
+            return states[key];
+        }
+
+        return 0;
+    }
+
     void AddState(string key, int value)
     {
         states.Add(key, value);

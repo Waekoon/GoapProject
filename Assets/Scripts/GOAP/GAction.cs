@@ -9,6 +9,7 @@ public abstract class GAction : MonoBehaviour
     public float cost = 1f;
     public GameObject target;
     public string targetTag;
+    public string targetName;
     public float duration = 0;
     public WorldState[] preConditions;
     public WorldState[] afterEffects;
@@ -17,7 +18,8 @@ public abstract class GAction : MonoBehaviour
     public Dictionary<string, int> preconditions;
     public Dictionary<string, int> effects;
 
-    public WorldStates agentBeliefs;
+    public WorldStates agentStates;
+    public GInventory inventory;
 
     public bool running = false;
 
@@ -46,6 +48,9 @@ public abstract class GAction : MonoBehaviour
                 effects.Add(e.key, e.value);
             }
         }
+
+        inventory = this.GetComponent<GAgent>().inventory;
+        agentStates = this.GetComponent<GAgent>().agentStates;
     }
 
     public bool IsAchievable()

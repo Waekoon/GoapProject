@@ -20,6 +20,8 @@ public class GAgent : MonoBehaviour
 {
     public List<GAction> actions = new List<GAction>();
     public Dictionary<SubGoal, int> goals = new Dictionary<SubGoal, int>();
+    public GInventory inventory = new GInventory();
+    public WorldStates agentStates = new WorldStates();
 
     GPlanner planner;
     Queue<GAction> actionQueue;
@@ -44,7 +46,8 @@ public class GAgent : MonoBehaviour
     {
         if (currentAction != null && currentAction.running)
         {
-            if (currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1f)
+            float distanceToTarget = Vector3.Distance(currentAction.target.transform.position, this.transform.position);
+            if (currentAction.agent.hasPath && distanceToTarget < 2f)
             {
                 if (!invoked)
                 {
@@ -86,6 +89,9 @@ public class GAgent : MonoBehaviour
             {
                 if (currentAction.target == null && currentAction.targetTag != "")
                     currentAction.target = GameObject.FindGameObjectWithTag(currentAction.targetTag);
+
+                if (currentAction.target == null && currentAction.targetName != "")
+                    currentAction.target = GameObject.Find(currentAction.targetName);
 
                 if (currentAction.target != null)
                 {
