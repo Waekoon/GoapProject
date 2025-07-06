@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerSystem : MonoBehaviour
 {
-    RobotController lastClicked;
+    GAgent lastClicked;
 
     // Update is called once per frame
     void Update()
@@ -22,11 +22,11 @@ public class PlayerSystem : MonoBehaviour
 
         if (Physics.Raycast(cameraRay, out RaycastHit hitObject))
         {
-            if (hitObject.collider.gameObject.TryGetComponent<RobotController>(out RobotController robotScript))
+            if (hitObject.collider.gameObject.TryGetComponent<GAgent>(out GAgent agentScript))
             {
                 lastClicked?.HideUI();
-                lastClicked = robotScript;
-                robotScript.ShowUI();
+                lastClicked = agentScript;
+                agentScript.ShowUI();
             } else
             {
                 lastClicked?.HideUI();

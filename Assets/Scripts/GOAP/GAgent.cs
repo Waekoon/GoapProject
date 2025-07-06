@@ -28,10 +28,17 @@ public class GAgent : MonoBehaviour
     public GAction currentAction;
     SubGoal currentGoal;
 
+    public GameObject configUI;
+    GameObject UIInstance;
+
     protected virtual void Start()
     {
         GAction[] acts = this.GetComponents<GAction>();
         foreach (GAction a in acts) actions.Add(a);
+
+        Canvas canva = GameObject.FindWithTag("Canva").GetComponent<Canvas>();
+        UIInstance = Instantiate(configUI, canva.transform);
+        HideUI();
     }
 
     bool invoked = false;
@@ -69,6 +76,8 @@ public class GAgent : MonoBehaviour
                 actionQueue = planner.plan(actions, sg.Key.sgoals, null);
                 if (actionQueue != null)
                 {
+                    GoapUI goapUI = UIInstance.GetComponent<GoapUI>();
+                    goapUI.CreateCard(actionQueue);
                     currentGoal = sg.Key;
                     break;
                 }
@@ -103,5 +112,15 @@ public class GAgent : MonoBehaviour
                 actionQueue = null;
             }
         }
+    }
+
+    public void ShowUI()
+    {
+        UIInstance.gameObject.SetActive(true);
+    }
+
+    public void HideUI()
+    {
+        UIInstance.gameObject.SetActive(false);
     }
 }

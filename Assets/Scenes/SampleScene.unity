@@ -980,6 +980,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1749860214
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 344438053820838727, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_Name
+      value: Bot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 601765417733299588, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643343984062862378, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: des
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643343984062862378, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: configUI
+      value: 
+      objectReference: {fileID: 4331441620455973810, guid: 6bcd40e19e2d01c4db5749520eb914ca, type: 3}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724860045784277576, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 344438053820838727, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053926348}
+    - targetCorrespondingSourceObject: {fileID: 344438053820838727, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053926347}
+    - targetCorrespondingSourceObject: {fileID: 344438053820838727, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053926346}
+    - targetCorrespondingSourceObject: {fileID: 344438053820838727, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053926345}
+    - targetCorrespondingSourceObject: {fileID: 344438053820838727, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053926344}
+    - targetCorrespondingSourceObject: {fileID: 344438053820838727, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053926343}
+  m_SourcePrefab: {fileID: 100100000, guid: 494098c4fac35794387552b0d96763ac, type: 3}
 --- !u!1 &1997528640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1208,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -1192,6 +1279,155 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2053926342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 344438053820838727, guid: 494098c4fac35794387552b0d96763ac, type: 3}
+  m_PrefabInstance: {fileID: 1749860214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2053926343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053926342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37867602d4b08843821039aa2ff1c70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: RetrieveAtStash
+  cost: 1
+  target: {fileID: 1997528640}
+  targetTag: 
+  targetName: 
+  duration: 1
+  preConditions:
+  - key: HasResource
+    value: 0
+  afterEffects:
+  - key: ResourceRetrieved
+    value: 0
+  agent: {fileID: 0}
+  actionCard: {fileID: 4395054112207361421, guid: 983291f240a9791478626de063e2cc5e, type: 3}
+  running: 0
+--- !u!114 &2053926344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053926342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee961caa033aa29479a1ffc910a2c8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: SmeltOre
+  cost: 0
+  target: {fileID: 0}
+  targetTag: 
+  targetName: Furnace
+  duration: 2
+  preConditions:
+  - key: OreToSmelt
+    value: 0
+  afterEffects:
+  - key: HasResource
+    value: 0
+  agent: {fileID: 0}
+  actionCard: {fileID: 3726175829027138080, guid: 21ae984ca6f16534fad12d27754144c3, type: 3}
+  running: 0
+--- !u!114 &2053926345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053926342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1306230fec7eb1f44a4f1722cd3bb47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: GoToEmeraldGenerator
+  cost: 2
+  target: {fileID: 0}
+  targetTag: 
+  targetName: EmeraldGenerator
+  duration: 4
+  preConditions: []
+  afterEffects:
+  - key: HasResource
+    value: 0
+  agent: {fileID: 0}
+  actionCard: {fileID: 5183000379261143467, guid: d576f20c4a1c0e54db328c9f45e6f029, type: 3}
+  running: 0
+--- !u!114 &2053926346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053926342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac18a416c2df94e44951b04cb3ea7892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: GoToGoldGenerator
+  cost: 2
+  target: {fileID: 0}
+  targetTag: 
+  targetName: GoldGenerator
+  duration: 3
+  preConditions: []
+  afterEffects:
+  - key: OreToSmelt
+    value: 0
+  agent: {fileID: 0}
+  actionCard: {fileID: 3541594521000530908, guid: 886cb5c1b9bf6c347955aa4c6dc4221c, type: 3}
+  running: 0
+--- !u!114 &2053926347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053926342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7bfea524267a3c44aae4267499b5ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: GoToIronGenerator
+  cost: 2
+  target: {fileID: 0}
+  targetTag: 
+  targetName: IronGenerator
+  duration: 2
+  preConditions: []
+  afterEffects:
+  - key: OreToSmelt
+    value: 0
+  agent: {fileID: 0}
+  actionCard: {fileID: 8670718126175249331, guid: aeed09689e588f9488f7f64c3bedc427, type: 3}
+  running: 0
+--- !u!114 &2053926348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053926342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6a09bc37b5bd84b8b0112d9a95f613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: []
+  currentAction: {fileID: 0}
+  configUI: {fileID: 4331441620455973810, guid: 6bcd40e19e2d01c4db5749520eb914ca, type: 3}
 --- !u!1 &2058526309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1612,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -1483,7 +1719,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -1700,6 +1936,7 @@ MonoBehaviour:
   - key: OreToSmelt
     value: 0
   agent: {fileID: 0}
+  actionCard: {fileID: 8670718126175249331, guid: aeed09689e588f9488f7f64c3bedc427, type: 3}
   running: 0
 --- !u!114 &4217071300875317856
 MonoBehaviour:
@@ -1715,6 +1952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actions: []
   currentAction: {fileID: 0}
+  configUI: {fileID: 4331441620455973810, guid: 6bcd40e19e2d01c4db5749520eb914ca, type: 3}
 --- !u!114 &4217071300875317863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1740,6 +1978,7 @@ MonoBehaviour:
   - key: ResourceRetrieved
     value: 0
   agent: {fileID: 0}
+  actionCard: {fileID: 4395054112207361421, guid: 983291f240a9791478626de063e2cc5e, type: 3}
   running: 0
 --- !u!114 &4217071300875317864
 MonoBehaviour:
@@ -1764,6 +2003,7 @@ MonoBehaviour:
   - key: HasResource
     value: 0
   agent: {fileID: 0}
+  actionCard: {fileID: 5183000379261143467, guid: d576f20c4a1c0e54db328c9f45e6f029, type: 3}
   running: 0
 --- !u!114 &4217071300875317865
 MonoBehaviour:
@@ -1788,6 +2028,7 @@ MonoBehaviour:
   - key: OreToSmelt
     value: 0
   agent: {fileID: 0}
+  actionCard: {fileID: 3541594521000530908, guid: 886cb5c1b9bf6c347955aa4c6dc4221c, type: 3}
   running: 0
 --- !u!114 &4217071300875317872
 MonoBehaviour:
@@ -1814,6 +2055,7 @@ MonoBehaviour:
   - key: HasResource
     value: 0
   agent: {fileID: 0}
+  actionCard: {fileID: 3726175829027138080, guid: 21ae984ca6f16534fad12d27754144c3, type: 3}
   running: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1822,6 +2064,7 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 4217071300875317853}
+  - {fileID: 1749860214}
   - {fileID: 1528749558}
   - {fileID: 444231243}
   - {fileID: 1136438841}

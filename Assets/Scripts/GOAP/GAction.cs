@@ -21,6 +21,8 @@ public abstract class GAction : MonoBehaviour
     public WorldStates agentStates;
     public GInventory inventory;
 
+    public GameObject actionCard;
+
     public bool running = false;
 
     public GAction()
