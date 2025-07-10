@@ -7,7 +7,7 @@ public class Robot : GAgent
     protected override void Start()
     {
         base.Start();
-        SubGoal s1 = new SubGoal("ResourceRetrieved", 3, false);
-        goals.Add(s1, 5);
+        //SubGoal s1 = new SubGoal("ResourceRetrieved", 3, false);
+        //goals.Add(s1, 5);
     }
 }

@@ -38,6 +38,7 @@ public class GAgent : MonoBehaviour
 
         Canvas canva = GameObject.FindWithTag("Canva").GetComponent<Canvas>();
         UIInstance = Instantiate(configUI, canva.transform);
+        UIInstance.GetComponent<GoapUI>().Setup(this);
         HideUI();
     }
 
@@ -47,6 +48,12 @@ public class GAgent : MonoBehaviour
         currentAction.running = false;
         currentAction.PostPerform();
         invoked = false;
+    }
+
+    public void SetGoal(SubGoal s1)
+    {
+        //SubGoal s1 = new SubGoal("ResourceRetrieved", 3, false);
+        goals.Add(s1, 5);
     }
 
     private void LateUpdate()
