@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 839303178566736341}
   - component: {fileID: 8391639161470599443}
   - component: {fileID: 7194526360127186692}
+  - component: {fileID: -7357873933288220866}
   m_Layer: 5
   m_Name: SmallerGoToEmeraldGenerator
   m_TagString: Untagged
@@ -89,6 +90,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e2694ee6cf552498fcb0fe747bf430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardType: 0
+--- !u!225 &-7357873933288220866
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994853361669679387}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7639126700446043080
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5540579591860562526}
   - component: {fileID: 6347948447123396975}
   - component: {fileID: 4575180691232256370}
+  - component: {fileID: 7107522847089357553}
   m_Layer: 5
   m_Name: SmeltOre
   m_TagString: Untagged
@@ -90,6 +91,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardType: 0
+--- !u!225 &7107522847089357553
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726175829027138080}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4005888280054030998
 GameObject:
   m_ObjectHideFlags: 0

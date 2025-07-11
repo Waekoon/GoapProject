@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public enum CardType { Action, Goal }
+
 
 public class EventCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public enum CardType { Action, Goal }
     public CardType cardType;
     Canvas canva;
     CanvasGroup canvasGroup;
@@ -48,5 +49,6 @@ public class EventCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void SetOriginalParent(Transform parent)
     {
         originalParent = parent;
+        transform.SetParent(parent);
     }
 }

@@ -20,7 +20,7 @@ public class CardSlot : MonoBehaviour, IDropHandler
             card.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             card.ChangeDefaultPos(card.transform.position);
 
-            if (card.cardType == CardType.Goal)
+            if (card.cardType == EventCard.CardType.Goal)
             {
                 goapUI.GetAgent().SetGoal(new SubGoal("ResourceRetrieved", 3, false));
             }

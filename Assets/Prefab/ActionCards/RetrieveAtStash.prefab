@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 5574357612791672237}
   - component: {fileID: 477680934701256926}
   - component: {fileID: 5867185752366398878}
+  - component: {fileID: 4022867094422946414}
   m_Layer: 5
   m_Name: RetrieveAtStash
   m_TagString: Untagged
@@ -224,3 +225,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardType: 0
+--- !u!225 &4022867094422946414
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395054112207361421}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
