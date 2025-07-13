@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class RetrieveAtStash : GAction
 {
+    public override void Awake()
+    {
+        base.Awake();
+        actionName = "RetrieveAtStash";
+        duration = 1;
+        targetName = "Stash";
+
+        preconditions.Add("Iron", 1);
+    }
+
     public override bool PrePerform()
     {
         return true;

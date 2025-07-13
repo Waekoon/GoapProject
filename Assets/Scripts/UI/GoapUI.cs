@@ -8,7 +8,6 @@ public class GoapUI : MonoBehaviour
 
     public float halfWidth;
     RectTransform rectTransform;
-    Vector2 center;
     Vector2 leftBound;
     Vector2 rightBound;
 
@@ -18,7 +17,6 @@ public class GoapUI : MonoBehaviour
     {
         this.agent = agent;
         rectTransform = GetComponent<RectTransform>();
-        center = rectTransform.anchoredPosition;
         leftBound = new Vector2(-halfWidth + 200, 50);
         rightBound = new Vector2(halfWidth - 200, 50);
     }
@@ -44,6 +42,5 @@ public class GoapUI : MonoBehaviour
 
             i++;
         }
-        
     }
 }

@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GoToIronGenerator : GAction
 {
+    public override void Awake()
+    {
+        base.Awake();
+        actionName = "GoToIronGenerator";
+        duration = 2;
+        targetName = "IronGenerator";
+
+        effects.Add("Iron", 1);
+    }
+
     public override bool PrePerform()
     {
         return true;

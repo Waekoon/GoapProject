@@ -18,6 +18,15 @@ public class WorldStates
         states = new Dictionary<string, int>();
     }
 
+    public WorldStates(WorldStates copy)
+    {
+        states = new Dictionary<string, int>();
+        foreach(KeyValuePair<string, int> state in copy.GetStates())
+        {
+            states.Add(state.Key, state.Value);
+        }
+    }
+
     public bool HasState(string key)
     {
         return states.ContainsKey(key);

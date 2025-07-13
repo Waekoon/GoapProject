@@ -9,6 +9,8 @@ public class ActionCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 {
     public enum CardType { Action, Goal }
     public CardType cardType;
+    public int siblingIndex;
+
     Canvas canva;
     CanvasGroup canvasGroup;
     Transform originalParent;
@@ -40,10 +42,10 @@ public class ActionCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         canvasGroup.blocksRaycasts = true;
     }
 
-    void SetCorrectSilbingPos(Vector3 pos)
+    public int SetCorrectSilbingPos(Vector3 pos)
     {
         int closestIndex = 0;
-        bool isOnTheLeft = false;
+        bool isOnTheLeft = true;
         float closestDistance = float.MaxValue;
         for (int i = 0; i < transform.parent.childCount; i++)
         {
@@ -68,11 +70,15 @@ public class ActionCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         if (isOnTheLeft == true)
         {
-            transform.SetSiblingIndex(closestIndex);
+            siblingIndex = closestIndex;
+
         } else
         {
-            transform.SetSiblingIndex(closestIndex + 1);
+            siblingIndex = closestIndex + 1;
         }
+
+        transform.SetSiblingIndex(siblingIndex);
+        return siblingIndex;
     }
 
     public void SetOriginalParent(Transform parent)

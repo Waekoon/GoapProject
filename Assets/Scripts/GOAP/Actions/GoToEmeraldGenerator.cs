@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GoToEmeraldGenerator : GAction
 {
+    public override void Awake()
+    {
+        base.Awake();
+        actionName = "GoToEmeraldGenerator";
+        duration = 4;
+        targetName = "EmeraldGenerator";
+
+        effects.Add("Emerald", 1);
+    }
+
     public override bool PrePerform()
     {
         return true;

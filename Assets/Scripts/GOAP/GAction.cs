@@ -31,9 +31,9 @@ public abstract class GAction : MonoBehaviour
         effects = new Dictionary<string, int>();
     }
 
-    public void Awake()
+    public virtual void Awake()
     {
-        agent = this.gameObject.GetComponent<NavMeshAgent>();
+        //agent = this.gameObject.GetComponent<NavMeshAgent>();
 
         if (preConditions != null)
         {
@@ -51,8 +51,15 @@ public abstract class GAction : MonoBehaviour
             }
         }
 
-        inventory = this.GetComponent<GAgent>().inventory;
-        agentStates = this.GetComponent<GAgent>().agentStates;
+        //inventory = this.GetComponent<GAgent>().inventory;
+        //agentStates = this.GetComponent<GAgent>().agentStates;
+    }
+
+    public void Setup(GAgent agent)
+    {
+        this.agent = agent.GetComponent<NavMeshAgent>();
+        inventory = agent.GetComponent<GAgent>().inventory;
+        agentStates = agent.GetComponent<GAgent>().agentStates;
     }
 
     public bool IsAchievable()

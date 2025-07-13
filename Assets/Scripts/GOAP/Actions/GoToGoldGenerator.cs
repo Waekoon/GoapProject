@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GoToGoldGenerator : GAction
 {
+    public override void Awake()
+    {
+        base.Awake();
+        actionName = "GoToGoldGenerator";
+        duration = 3;
+        targetName = "GoldGenerator";
+
+        effects.Add("Gold", 1);
+    }
+
     public override bool PrePerform()
     {
         return true;

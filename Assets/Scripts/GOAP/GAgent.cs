@@ -56,6 +56,15 @@ public class GAgent : MonoBehaviour
         goals.Add(s1, 5);
     }
 
+    public void ManualAssignActions(Queue<GAction> actionQueue)
+    {
+        foreach (GAction action in actionQueue)
+        {
+            action.Setup(this);
+        }
+        this.actionQueue = actionQueue;
+    }
+
     private void LateUpdate()
     {
         if (currentAction != null && currentAction.running)
