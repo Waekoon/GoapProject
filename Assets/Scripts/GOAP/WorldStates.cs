@@ -79,4 +79,12 @@ public class WorldStates
     {
         return states;
     }
+
+    public void ShowStates()
+    {
+        foreach (KeyValuePair<string, int> pair in states)
+        {
+            Debug.Log(pair.Key + ": " + pair.Value);
+        }
+    }
 }
