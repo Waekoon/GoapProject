@@ -7,13 +7,13 @@ using UnityEngine.EventSystems;
 
 public class ActionCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public enum CardType { Action, Goal }
-    public CardType cardType;
-    public int siblingIndex;
-
+    //public enum CardType { Action, Goal }
+    //public CardType cardType;
+    [HideInInspector]public int siblingIndex;
+    [HideInInspector]public Transform originalParent;
     Canvas canva;
     CanvasGroup canvasGroup;
-    Transform originalParent;
+    
 
     void Awake()
     {
@@ -24,6 +24,7 @@ public class ActionCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnBeginDrag(PointerEventData eventData)
     {
         originalParent = transform.parent;
+        siblingIndex = transform.GetSiblingIndex();
         transform.SetParent(canva.transform);
 
         canvasGroup.blocksRaycasts = false;
@@ -37,7 +38,7 @@ public class ActionCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(originalParent);
-        SetCorrectSilbingPos(transform.position);
+        transform.SetSiblingIndex(siblingIndex);
 
         canvasGroup.blocksRaycasts = true;
     }
@@ -79,10 +80,5 @@ public class ActionCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         transform.SetSiblingIndex(siblingIndex);
         return siblingIndex;
-    }
-
-    public void SetOriginalParent(Transform parent)
-    {
-        originalParent = parent;
     }
 }

@@ -145,8 +145,9 @@ GameObject:
   - component: {fileID: 6594822639827493790}
   - component: {fileID: 5574357612791672237}
   - component: {fileID: 477680934701256926}
-  - component: {fileID: 5867185752366398878}
   - component: {fileID: 4022867094422946414}
+  - component: {fileID: 3560872617794065241}
+  - component: {fileID: 8500598869162420659}
   m_Layer: 5
   m_Name: RetrieveAtStash
   m_TagString: Untagged
@@ -212,19 +213,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5867185752366398878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4395054112207361421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e2694ee6cf552498fcb0fe747bf430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardType: 0
 --- !u!225 &4022867094422946414
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -237,3 +225,40 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &3560872617794065241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395054112207361421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4457e297544de4db910a4f8aa8486d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  siblingIndex: 0
+  originalParent: {fileID: 0}
+--- !u!114 &8500598869162420659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395054112207361421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37867602d4b08843821039aa2ff1c70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Action
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  targetName: 
+  duration: 0
+  preConditions: []
+  afterEffects: []
+  agent: {fileID: 0}
+  actionCard: {fileID: 4395054112207361421}
+  running: 0

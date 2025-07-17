@@ -32,6 +32,11 @@ public class WorldStates
         return states.ContainsKey(key);
     }
 
+    public bool IsConditionMatch(string key, int value)
+    {
+        return (states.ContainsKey(key) && states[key] >= value);
+    }
+
     public int GetValue(string key)
     {
         if (states.ContainsKey(key))

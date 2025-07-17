@@ -29,33 +29,49 @@ public class ActionSlot : MonoBehaviour, IDropHandler
 
         droppedCardSiblingIndex = CheckSiblingIndex(card.transform);
         bool is_new_card = false;
-        if (card.transform.IsChildOf(content)) is_new_card = true;
+
+        if ((card.originalParent == content) == false) is_new_card = true;
 
         if (is_new_card)
         {
-
-        }
-        
-        if (ArePreConditionsMet(droppedCardSiblingIndex, action)) 
-        {        
-            card.SetOriginalParent(content);
-            card.siblingIndex = droppedCardSiblingIndex;
-            card.transform.SetSiblingIndex(droppedCardSiblingIndex);
-
-            Debug.Log("SiblingIndex:" + droppedCardSiblingIndex);
-
-            if (droppedCardSiblingIndex + 1 == statesSection.Count)
+            if (ArePreConditionsMet(droppedCardSiblingIndex, action))
             {
+                card.originalParent = content;
+                card.transform.SetParent(content);
+                card.siblingIndex = droppedCardSiblingIndex;
+                card.transform.SetSiblingIndex(droppedCardSiblingIndex);
                 AddNewStateSection(droppedCardSiblingIndex, action);
-            } else
-            {
-                UpdateStatesSection(droppedCardSiblingIndex, action);
             }
-            
             ShowStatesList();
         } else
         {
-            Debug.Log("Conditions are not met");
+            card.transform.SetParent(card.originalParent);
+            card.transform.SetSiblingIndex(card.siblingIndex);
+            Debug.Log("original: " + card.transform.GetSiblingIndex());
+            Debug.Log("new: " + droppedCardSiblingIndex);
+            
+            if (card.transform.GetSiblingIndex() > droppedCardSiblingIndex)
+            {
+                if (ArePreConditionsMet(droppedCardSiblingIndex, action))
+                {
+                    card.siblingIndex = droppedCardSiblingIndex;
+                    card.transform.SetSiblingIndex(droppedCardSiblingIndex);
+                    UpdateStatesSection(droppedCardSiblingIndex);
+                    
+                    ShowStatesList();
+                }
+            } else if (card.transform.GetSiblingIndex() < droppedCardSiblingIndex)
+            {
+                if (ArePreviousCardsMatched(droppedCardSiblingIndex, action))
+                {
+                    card.siblingIndex = droppedCardSiblingIndex;
+                    card.transform.SetSiblingIndex(droppedCardSiblingIndex);
+                    UpdateStatesSection(droppedCardSiblingIndex);
+
+                    ShowStatesList();
+                }
+            }
+            
         }
     }
 
@@ -125,7 +141,26 @@ public class ActionSlot : MonoBehaviour, IDropHandler
             {
                 Debug.Log(pair.Key);
             }
-            if (!statesSection[siblingIndex].HasState(condition.Key)) { return false; }
+            if (!statesSection[siblingIndex].IsConditionMatch(condition.Key, condition.Value)) { return false; }
+        }
+
+        return true;
+    }
+
+    bool ArePreviousCardsMatched(int new_siblingIndex, GAction action)
+    {
+        for (int i = action.transform.GetSiblingIndex() + 1; i <= new_siblingIndex; i++)
+        {
+            WorldStates new_state = new WorldStates(statesSection[i]);
+            GAction action_to_check = content.GetChild(i).GetComponent<GAction>();
+            foreach (KeyValuePair<string, int>  effect in action.effects)
+            {
+                new_state.ModifyState(effect.Key, -(effect.Value));
+            }
+            foreach(KeyValuePair<string, int> condition in action_to_check.preconditions)
+            {
+                if (!new_state.IsConditionMatch(condition.Key, condition.Value)) { return false; }
+            } 
         }
 
         return true;
@@ -133,36 +168,10 @@ public class ActionSlot : MonoBehaviour, IDropHandler
 
     void AddNewStateSection(int siblingIndex, GAction action)
     {
-        if (siblingIndex + 1 >= statesSection.Count)
-        {
-            WorldStates previousStates = statesSection[siblingIndex];
-            WorldStates current = new WorldStates(previousStates);
-            statesSection.Add(current);
-        }
-
-        foreach (KeyValuePair<string, int> effect in action.effects)
-        {
-            statesSection[siblingIndex + 1].ModifyState(effect.Key, effect.Value);
-        }
-    }
-
-    void UpdateStatesSection(int siblingIndex, GAction action, bool needs_expand = false)
-    {
         List<WorldStates> tempStatesSection = new List<WorldStates>();
-        WorldStates temp = new WorldStates(statesSection[siblingIndex]);
 
-        for (int k = siblingIndex + 1; k < statesSection.Count; k++)
-        {
-            temp = statesSection[k];
-            statesSection[k] = new WorldStates(statesSection[k - 1]);
-            foreach(KeyValuePair<string, int> effect in action.effects)
-            {
-                statesSection[k].ModifyState(effect.Key, effect.Value);
-            }
-        }
-
-
-        
+        WorldStates newState = new WorldStates();
+        statesSection.Add(newState);
         int i = 0;
 
         for (i = 0; i <= siblingIndex; i++)
@@ -173,11 +182,35 @@ public class ActionSlot : MonoBehaviour, IDropHandler
         for (int j = i; j < statesSection.Count; j++)
         {
             tempStatesSection.Add(new WorldStates(statesSection[j - 1]));
-            foreach(KeyValuePair<string, int> effect in action.effects)
+            foreach (KeyValuePair<string, int> effect in action.effects)
             {
                 tempStatesSection[j].ModifyState(effect.Key, effect.Value);
             }
         }
+
+        statesSection = tempStatesSection;
+    }
+
+    void UpdateStatesSection(int siblingIndex)
+    {
+        List<WorldStates> tempStatesSection = new List<WorldStates>();
+
+        tempStatesSection.Add(new WorldStates(statesSection[0]));
+        
+        int i = 1;
+        foreach(Transform card in content)
+        {
+            GAction action = card.GetComponent<GAction>();
+
+            tempStatesSection.Add(new WorldStates(tempStatesSection[i - 1]));
+            
+            foreach (KeyValuePair<string, int> effect in action.effects)
+            {
+                tempStatesSection[i].ModifyState(effect.Key, effect.Value);
+            }
+
+            i++;
+        }    
 
         statesSection = tempStatesSection;
     }
